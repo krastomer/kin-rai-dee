@@ -20,10 +20,15 @@
 		console.log(recentRandomList);
 	}
 
+	function resetRecentMenu() {
+		recentRandomList = [];
+	}
+
 	setNewMenu();
 </script>
 
 <button on:click={setNewMenu}>new menu</button>
+<button on:click={resetRecentMenu}>reset</button>
 <h1>{menu}</h1>
 
 <ul>
