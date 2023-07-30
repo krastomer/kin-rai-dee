@@ -1,6 +1,8 @@
 <script lang="ts">
 	import _ from 'lodash';
-	const foods: string[] = ['pad kapao', 'khai jeaw moo sub', 'kaprao kung', 'pad thai', 'hoy tod'];
+	import { foods } from './food';
+
+	let recentRandomList: string[] = [];
 
 	let menu: string;
 
@@ -11,11 +13,21 @@
 			newMenu = _.sample(foods) || '';
 			count++;
 		} while (_.isEqual(newMenu, menu) && count < 5);
+		if (menu) {
+			recentRandomList = [...recentRandomList, menu];
+		}
 		menu = newMenu;
+		console.log(recentRandomList);
 	}
 
 	setNewMenu();
 </script>
 
-<h1>{menu}</h1>
 <button on:click={setNewMenu}>new menu</button>
+<h1>{menu}</h1>
+
+<ul>
+	{#each recentRandomList as f, i}
+		<h2>{f} {i}</h2>
+	{/each}
+</ul>
