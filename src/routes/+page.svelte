@@ -1,9 +1,7 @@
 <script lang="ts">
 	import _ from 'lodash';
-	import { foods } from './food';
-	import { Kbd } from 'flowbite-svelte';
+	import { foods } from '../constants/food';
 	import Footer from './footer.svelte';
-	import Header from './header.svelte';
 
 	let recentPick: string[] = [];
 
@@ -31,18 +29,14 @@
 			setNewMenu();
 		}
 	}
-	function onClickDown(e: MouseEvent) {
-		if (e.button === 0) {
-			setNewMenu();
-		}
-	}
 </script>
 
-<svelte:window on:keydown={onKeyDown} on:click={onClickDown} />
+<button
+	class="fixed flex items-center justify-center h-screen w-screen cursor-auto"
+	on:click={setNewMenu}
+	on:keyup={onKeyDown}
+>
+	<p class="text-xl">{menu || 'กินไรดี'}</p>
+</button>
 
-<Header />
-<div class="fixed flex flex-col h-screen w-screen items-center justify-center">
-	<h1 class="text-xl">{menu || 'กินไรดี'}</h1>
-	<p class="text-slate-500"><Kbd class="p-1.5">Space bar</Kbd> หรือ click อะแหละ</p>
-</div>
 <Footer />
