@@ -2,6 +2,7 @@
 	import _ from 'lodash';
 	import { foods } from '../constants/food';
 	import Footer from './footer.svelte';
+	import Header from './header.svelte';
 
 	let recentPick: string[] = [];
 
@@ -13,7 +14,7 @@
 		do {
 			newMenu = _.sample(foods)?.name || '';
 			count++;
-		} while (_.isEqual(newMenu, menu) && count < 5);
+		} while (_.isEqual(newMenu, menu) && count < 3);
 		if (menu) {
 			recentPick = [...recentPick, menu];
 		}
@@ -39,4 +40,5 @@
 	<p class="text-xl">{menu || 'กินไรดี'}</p>
 </button>
 
+<Header />
 <Footer />
