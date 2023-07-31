@@ -1,8 +1,9 @@
 <script lang="ts">
 	import _ from 'lodash';
 	import { foods } from './food';
-	import { Button, Kbd } from 'flowbite-svelte';
+	import { Kbd } from 'flowbite-svelte';
 	import Footer from './footer.svelte';
+	import Header from './header.svelte';
 
 	let recentPick: string[] = [];
 
@@ -39,9 +40,9 @@
 
 <svelte:window on:keydown={onKeyDown} on:click={onClickDown} />
 
+<Header />
 <div class="fixed flex flex-col h-screen w-screen items-center justify-center">
 	<h1 class="text-xl">{menu || 'กินไรดี'}</h1>
 	<p class="text-slate-500"><Kbd class="p-1.5">Space bar</Kbd> หรือ click อะแหละ</p>
 </div>
-
 <Footer />

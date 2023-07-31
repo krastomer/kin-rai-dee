@@ -2,7 +2,7 @@
 	const githubRepo = 'https://github.com/krastomer/kin-rai-dee';
 </script>
 
-<footer class="fixed bottom-0 left-0 w-screen bg-white m-4 dark:bg-gray-800">
+<footer class="fixed bottom-0 left-0 w-screen m-4 dark:bg-gray-800">
 	<div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
 		<span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
 			Inspired มาจาก <a class="font-bold" href="https://deploydeemai.today/">deploydeemai.today</a> และพี่ในทีมที่ชอบถามว่ากินอะไรดี
