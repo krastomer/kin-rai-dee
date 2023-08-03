@@ -2,7 +2,7 @@
 	import { INSPIRED_WEB_LINK, PROJECT_REPO_LINK } from '../constants/constants';
 </script>
 
-<footer class="bottom-0 fixed flex flex-row items-center w-screen justify-between p-4">
+<footer class="bottom-0 fixed flex flex-row items-center w-screen justify-between p-8">
 	<span class="text-sm text-gray-500 dark:text-gray-400">
 		Inspired มาจาก <a class="font-bold" href={INSPIRED_WEB_LINK}>deploydeemai.today</a> และพี่ในทีมที่ชอบถามว่ากินอะไรดี
 	</span>

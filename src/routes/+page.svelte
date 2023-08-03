@@ -20,24 +20,14 @@
 		}
 		menu = newMenu;
 	}
-
-	function resetRecentMenu() {
-		recentPick = [];
-	}
-
-	function onKeyDown(e: KeyboardEvent) {
-		if (e.code === 'Space') {
-			setNewMenu();
-		}
-	}
 </script>
 
 <button
-	class="fixed flex items-center justify-center h-screen w-screen cursor-auto"
+	class="fixed flex flex-col space-y-4 items-center justify-center h-screen w-screen cursor-auto"
 	on:click={setNewMenu}
-	on:keyup={onKeyDown}
 >
-	<p class="text-xl">{menu || 'กินไรดี'}</p>
+	<h1 class="text-xl">{menu || 'กินไรดี'}</h1>
+	<p class="text-stone-500">กดคลิ๊กซ้ายหรือ space bar เพื่อสุ่มเมนูใหม่</p>
 </button>
 
 <Header />
